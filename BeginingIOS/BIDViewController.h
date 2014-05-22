@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BIDViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *labelField;
+- (IBAction)buttonPressed:(id)sender;
 
 @end

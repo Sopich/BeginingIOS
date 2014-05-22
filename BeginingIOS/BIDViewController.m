@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonPressed:(id)sender {
+    NSString *title=[sender titleForState:UIControlStateNormal];
+    NSString *plainText=[NSString stringWithFormat:@"%@ 按钮被按下了",title];
+    _labelField.text=plainText;
+    
+}
 @end
