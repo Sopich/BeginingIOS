@@ -29,7 +29,17 @@
 - (IBAction)buttonPressed:(id)sender {
     NSString *title=[sender titleForState:UIControlStateNormal];
     NSString *plainText=[NSString stringWithFormat:@"%@ 按钮被按下了",title];
-    _labelField.text=plainText;
+   // _labelField.text=plainText;
+    
+    NSMutableAttributedString *styledTxt=[[NSMutableAttributedString alloc]initWithString:plainText];
+    
+    NSDictionary *attribute=@{NSFontAttributeName:[UIFont boldSystemFontOfSize:_labelField.font.pointSize] };
+    NSRange rangename=[plainText rangeOfString:title];
+    
+    [styledTxt setAttributes:attribute
+                       range:rangename];
+    _labelField.attributedText=styledTxt;
+    
     
 }
 @end
